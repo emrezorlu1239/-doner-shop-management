@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using DonerApp.Models;
 
 namespace DonerApp
@@ -18,7 +18,9 @@ namespace DonerApp
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=doner.db");
+            var appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DonerApp");
+            Directory.CreateDirectory(appDataPath);
+            optionsBuilder.UseSqlite($"Data Source={appDataPath}\\doner.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

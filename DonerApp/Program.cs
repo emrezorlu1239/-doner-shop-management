@@ -13,6 +13,8 @@ namespace DonerApp
 
             using (var db = new AppDbContext())
             {
+                db.Database.EnsureCreated();
+
                 // 1. ÇALIŞANLAR
                 if (!db.Employees.Any())
                 {
