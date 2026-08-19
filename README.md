@@ -74,4 +74,4 @@ SQLite database (`doner.db`) is auto-created on first run with sample data:
 
 ## License
 
-MIT License
+MIT License 
